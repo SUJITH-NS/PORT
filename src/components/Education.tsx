@@ -10,23 +10,24 @@ const Education: React.FC = () => {
       duration: "2023 - 2027",
       status: "Pursuing",
       highlight: "III Year"
+    }, 
+    {
+      degree: "DIPLOMA in Communication and Computer Networking",
+      institution: "Kongu Polytechnic College",
+      location: "Perundurai",
+      duration: "2022 - 2024",
+      status: "Completed",
+      highlight: "Academic Excellence"
     },
     {
       degree: "Higher Secondary Education",
-      institution: "Government Higher Secondary School",
-      location: "Perambalur",
-      duration: "2019 - 2021",
+      institution: "SSIVS",
+      location: "SANKARGOUNDANPALAYAM",
+      duration: "2021 - 2022",
       status: "Completed",
       highlight: "Science Stream"
-    },
-    {
-      degree: "Secondary Education",
-      institution: "Government High School",
-      location: "Perambalur",
-      duration: "2018 - 2019",
-      status: "Completed",
-      highlight: "Academic Excellence"
     }
+
   ];
 
   return (
