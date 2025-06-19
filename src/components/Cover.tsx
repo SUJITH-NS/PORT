@@ -70,12 +70,19 @@ const Cover: React.FC<CoverProps> = ({ onNavigate }) => {
           <div className="sm:ml-16 space-y-6 sm:space-y-8 mt-12 sm:mt-16">
             {/* Header with Photo */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-8">
-              <div className="polaroid transform rotate-3 flex-shrink-0">
-                <div className="w-24 h-32 sm:w-32 sm:h-40 bg-gradient-to-br from-blue-400 to-purple-500 rounded flex items-center justify-center">
-                  <Code2 size={32} className="text-white sm:w-12 sm:h-12" />
-                </div>
-                <div className="text-center mt-2 handwriting text-xs sm:text-sm text-pencil-gray">
-                  Future Dev 📸
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-ink-blue to-blue-600 rounded-2xl transform rotate-6 group-hover:rotate-12 transition-transform duration-300 opacity-75"></div>
+                <div className="relative transform group-hover:scale-105 transition-transform duration-300">
+                  <div className="w-48 h-56 sm:w-56 sm:h-64 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
+                    <img 
+                      src="/src/assets/profile picture.jpg" 
+                      alt="Sujith Nagaraj"
+                      className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
+                    <Code2 size={24} className="text-ink-blue" />
+                  </div>
                 </div>
               </div>
               

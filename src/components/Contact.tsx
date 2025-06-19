@@ -33,13 +33,7 @@ const Contact: React.FC = () => {
     }
   ];
 
-  const handleGmailClick = () => {
-    const email = "sujithnagaraj20@gmail.com";
-    const subject = "Hello from your portfolio";
-    const gmailUrl = `https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=${email}&su=${encodeURIComponent(subject)}`;
-    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
-  };
-
+  // Ensure the contactInfo array is not empty
   return (
     <div className="min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8 pb-20 lg:pb-8" data-section="contact">
       <div className="max-w-6xl w-full">
@@ -84,16 +78,19 @@ const Contact: React.FC = () => {
 
             {/* Gmail Compose Button */}
             <div className="mt-8 flex justify-center">
-              <button
-                onClick={handleGmailClick}
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=sujithnagaraj20@gmail.com&su=Hello%20from%20your%20portfolio&body=Hi%20Sujith%2C%0A%0A"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-ink-blue to-amber-600 text-amber-200 rounded-xl 
-                hover:from-amber-700 hover:to-amber-800 transition-all duration-300 shadow-lg hover:shadow-xl 
-                text-lg font-semibold min-h-[4rem] cursor-pointer active:scale-[0.98]"
+                  hover:from-amber-700 hover:to-amber-800 transition-all duration-300 shadow-lg hover:shadow-xl 
+                  text-lg font-semibold min-h-[4rem] cursor-pointer active:scale-[0.98]"
                 style={{ touchAction: 'manipulation' }}
               >
                 <Mail className="w-6 h-6" />
                 <span>Compose in Gmail</span>
-              </button>
+              </a>
+              
             </div>
           </div>
         </div>
