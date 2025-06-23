@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
           {/* Notebook Holes - Hidden on mobile */}
           <div className="absolute left-4 sm:left-8 top-0 bottom-0 hidden sm:flex flex-col justify-evenly">
             {[...Array(8)].map((_, i) => (
-              <div key={i} className="w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-white border-2 border-gray-300 shadow-inner" />
+              <div key={i} className="w-4 h-4 bg-amber-100 rounded-full shadow-inner my-1" />
             ))}
           </div>
           
@@ -120,10 +120,22 @@ const Projects: React.FC = () => {
                             <Github size={14} />
                             <span>Code</span>
                           </button>
-                          <button className="flex items-center justify-center space-x-2 bg-green-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-green-700 transition-colors text-xs sm:text-sm">
-                            <ExternalLink size={14} />
-                            <span>Live Demo</span>
-                          </button>
+                          {index === 0 ? (
+                            <a
+                              href="https://sujith-ns.github.io/quiz/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center space-x-2 bg-green-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-green-700 transition-colors text-xs sm:text-sm"
+                            >
+                              <ExternalLink size={14} />
+                              <span>Live Demo</span>
+                            </a>
+                          ) : (
+                            <button className="flex items-center justify-center space-x-2 bg-green-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-green-700 transition-colors text-xs sm:text-sm">
+                              <ExternalLink size={14} />
+                              <span>Live Demo</span>
+                            </button>
+                          )}
                         </div>
                       </div>
                     </div>

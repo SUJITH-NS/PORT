@@ -13,7 +13,7 @@ const Skills: React.FC = () => {
       category: "Frameworks",
       icon: Laptop,
       color: "from-green-400 to-green-600",
-      skills: ["ReactJS", "NodeJS", "Flask", "TailwindCSS"]
+      skills: ["ReactJS", "NodeJS", "Flask"]
     },
     {
       category: "Database",
@@ -122,8 +122,8 @@ const Skills: React.FC = () => {
               <div className="sticky-note p-4 sm:p-6 transform -rotate-1 inline-block max-w-sm">
                 <h3 className="handwriting text-lg sm:text-xl lg:text-2xl font-bold text-ink-blue mb-2 sm:mb-3">Currently Learning</h3>
                 <div className="flex flex-wrap gap-1 sm:gap-2">
-                  <span className="bg-red-200 text-red-800 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium">Docker</span>
-                  <span className="bg-indigo-200 text-indigo-800 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium">Kubernetes</span>
+                  <span className="bg-red-200 text-red-800 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium">Tailwind css</span>
+                  <span className="bg-indigo-200 text-indigo-800 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium">Express</span>
                   <span className="bg-teal-200 text-teal-800 px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium">TypeScript</span>
                 </div>
               </div>

@@ -12,8 +12,8 @@ function App() {
   const [currentSection, setCurrentSection] = useState('cover');
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  // Exclude Cover from sections since it requires special props
   const sections = [
-    { id: 'cover', component: Cover },
     { id: 'about', component: About },
     { id: 'education', component: Education },
     { id: 'skills', component: Skills },
@@ -32,7 +32,7 @@ function App() {
     }, 300);
   };
 
-  const CurrentComponent = sections.find(section => section.id === currentSection)?.component || Cover;
+  const CurrentComponent = sections.find(section => section.id === currentSection)?.component;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 relative overflow-hidden">
@@ -43,7 +43,7 @@ function App() {
       <Navigation 
         currentSection={currentSection} 
         onNavigate={navigateToSection} 
-        sections={sections.slice(1)} // Exclude cover from navigation initially
+        sections={sections}
       />
       
       {/* Main Content */}
@@ -51,7 +51,7 @@ function App() {
         {currentSection === 'cover' ? (
           <Cover onNavigate={navigateToSection} />
         ) : (
-          <CurrentComponent />
+          CurrentComponent ? <CurrentComponent /> : null
         )}
       </main>
       
