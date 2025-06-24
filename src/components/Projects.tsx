@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github, Clock, Users, Zap, Cloud } from 'lucide-react';
+import { ExternalLink, Github, Zap, Cloud } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const projects = [
@@ -105,7 +105,7 @@ const Projects: React.FC = () => {
                         <div>
                           <h4 className="handwriting text-base sm:text-lg font-semibold text-ink-brown mb-2">Key Features</h4>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2">
-                            {project.features.map((feature, featureIndex) => (
+                            {project.features.map((feature) => (
                               <div key={feature} className="flex items-center space-x-2 text-xs sm:text-sm text-pencil-gray">
                                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-ink-blue rounded-full flex-shrink-0" />
                                 <span>{feature}</span>
