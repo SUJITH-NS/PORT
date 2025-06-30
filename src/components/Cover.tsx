@@ -75,7 +75,7 @@ const Cover: React.FC<CoverProps> = ({ onNavigate }) => {
                 <div className="relative transform group-hover:scale-105 transition-transform duration-300">
                   <div className="w-48 h-56 sm:w-56 sm:h-64 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
                     <img 
-                      src="/assets/profile-picture.jpg" 
+                      src="/assets/profile.jpg" 
                       alt="Sujith Nagaraj"
                       className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-300"
                     />

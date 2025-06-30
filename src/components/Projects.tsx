@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Github, Zap, Cloud } from 'lucide-react';
+import { Github } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const projects = [
@@ -10,7 +10,8 @@ const Projects: React.FC = () => {
       features: ["Timed/Untimed Quizzes", "Editable Question Bank", "Progress Tracking", "Admin Dashboard"],
       image: "https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=400",
       type: "Web Application",
-      status: "Completed"
+      status: "Completed",
+      repoUrl: "https://github.com/SUJITH-NS/quiz-app",
     },
     {
       title: "Weather & Crop Forecast Website",
@@ -19,7 +20,18 @@ const Projects: React.FC = () => {
       features: ["Real-time Weather", "Crop Suggestions", "Location-based", "Responsive Design"],
       image: "https://images.pexels.com/photos/1048036/pexels-photo-1048036.jpeg?auto=compress&cs=tinysrgb&w=400",
       type: "Web Application",
-      status: "Completed"
+      status: "Completed",
+      repoUrl: "https://github.com/SUJITH-NS",
+    },
+    {
+      title: "Modern Polling Platform",
+      description: "A full-stack web application that enables users to create, manage, and participate in real-time polls with a visually engaging animated UI. The platform features secure user authentication, an admin dashboard for poll management, and live result publishing. Built with a React (TypeScript) frontend, Node.js/Express backend, and MongoDB for data storage. The app is deployed on Vercel (frontend) and Render (backend), ensuring scalability and accessibility across devices.",
+      tech: ["React (TypeScript)", "Node.js", "Express", "MongoDB", "Vercel", "Render"],
+      features: ["Real-time Polls", "Animated UI", "User Authentication", "Admin Dashboard", "Live Results", "Responsive Design"],
+      image: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=400",
+      type: "Web Application",
+      status: "Completed",
+      repoUrl: "https://github.com/SUJITH-NS",
     }
   ];
 
@@ -50,8 +62,8 @@ const Projects: React.FC = () => {
             {/* Projects Grid */}
             <div className="space-y-8 sm:space-y-12">
               {projects.map((project, index) => (
-                <div key={project.title} className="relative">
-                  <div className={`polaroid p-4 sm:p-6 lg:p-8 ${index % 2 === 0 ? 'transform rotate-1' : 'transform -rotate-1'}`}>
+                <div key={project.title} className="relative group">
+                  <div className={`polaroid p-4 sm:p-6 lg:p-8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:rotate-0 ${index % 2 === 0 ? 'transform rotate-1' : 'transform -rotate-1'}`}>
                     <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
                       {/* Project Image */}
                       <div className="relative order-2 lg:order-1">
@@ -115,27 +127,16 @@ const Projects: React.FC = () => {
                         </div>
                         
                         {/* Action Buttons */}
-                        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 pt-3 sm:pt-4">
-                          <button className="flex items-center justify-center space-x-2 bg-ink-blue text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm">
-                            <Github size={14} />
-                            <span>Code</span>
-                          </button>
-                          {index === 0 ? (
-                            <a
-                              href="https://sujith-ns.github.io/quiz/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center justify-center space-x-2 bg-green-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-green-700 transition-colors text-xs sm:text-sm"
-                            >
-                              <ExternalLink size={14} />
-                              <span>Live Demo</span>
-                            </a>
-                          ) : (
-                            <button className="flex items-center justify-center space-x-2 bg-green-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-green-700 transition-colors text-xs sm:text-sm">
-                              <ExternalLink size={14} />
-                              <span>Live Demo</span>
-                            </button>
-                          )}
+                        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 pt-3 sm:pt-4 relative z-50">
+                          <a
+                            href={project.repoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex items-center justify-center space-x-2 bg-blue-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg hover:bg-blue-700 hover:shadow-xl transition-all duration-300 text-sm font-medium transform hover:scale-110 hover:-translate-y-1 shadow-lg cursor-pointer border-2 border-transparent hover:border-blue-300 active:scale-95"
+                          >
+                            <Github size={16} className="group-hover:rotate-12 transition-transform duration-300" />
+                            <span className="group-hover:font-semibold transition-all duration-300">View Code</span>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -147,7 +148,7 @@ const Projects: React.FC = () => {
                   {/* Pencil annotations */}
                   <div className={`absolute ${index % 2 === 0 ? 'right-2 top-2 sm:right-4 sm:top-4' : 'left-2 top-2 sm:left-4 sm:top-4'} sticky-note p-2 transform ${index % 2 === 0 ? 'rotate-6' : '-rotate-6'}`}>
                     <div className="handwriting text-xs sm:text-sm text-ink-blue font-semibold">
-                      {index === 0 ? '💡 Problem-solving' : '🌱 Real-world impact'}
+                      {index === 0 ? '💡 Problem-solving' : index === 1 ? '🌱 Real-world impact' : '🚀 Full-stack magic'}
                     </div>
                   </div>
                 </div>
